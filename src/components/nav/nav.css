@@ -7,12 +7,12 @@
     max-width: 1440px;
     width: 100%;
     height: 90px;
-    border-bottom: 1px solid #8f9ca4;
+    border-bottom: 1px solid var(--RegentGray);
     z-index: 99;
     background: white;
   }
   .ant-avatar{
-    border: 3px solid #8f9ca4;
+    border: 3px solid var(--RegentGray);
     
   }
   .ant-avatar.ant-avatar-icon{
@@ -22,10 +22,12 @@
   .progress-bar {
     position: fixed;
     margin-top: 110px;
+    max-width: 1440px;
+    width: 100%;
     /* top: 0; */
-    /* left: 0;
-    right: 0; */
+    left: auto;
+    right: auto;
     height: 10px;
-    background: #8f9ca4;
+    background: var(--RegentGray);
     transform-origin: 0%;
   }

@@ -44,12 +44,3 @@
     font-size: 20px;
     /* animation: typing 3s steps(40) infinite; */
 }
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background: #8f9ca4;
-    transform-origin: 0%;
-  }

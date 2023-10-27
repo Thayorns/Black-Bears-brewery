@@ -1,5 +1,6 @@
 body{
-  background: #b1bec8;
+  background: #000000;
+  --RegentGray: #8f9ca4;
 }
 .App {
   max-width: 1440px;
