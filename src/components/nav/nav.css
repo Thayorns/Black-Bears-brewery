@@ -1,0 +1,31 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    padding: 10px 0;
+    max-width: 1440px;
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #8f9ca4;
+    z-index: 99;
+    background: white;
+  }
+  .ant-avatar{
+    border: 3px solid #8f9ca4;
+    
+  }
+  .ant-avatar.ant-avatar-icon{
+    background: transparent;
+    float: right;
+  }
+  .progress-bar {
+    position: fixed;
+    margin-top: 110px;
+    /* top: 0; */
+    /* left: 0;
+    right: 0; */
+    height: 10px;
+    background: #8f9ca4;
+    transform-origin: 0%;
+  }
