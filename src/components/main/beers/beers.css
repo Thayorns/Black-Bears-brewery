@@ -1,0 +1,5 @@
+.beers-wrapper {
+    height: 1000px;
+    background-image: url('../../../images/urbanCultureFest.jpg');
+    background-size: cover;
+}
