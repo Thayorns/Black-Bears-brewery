@@ -10,31 +10,24 @@ import Home from "./home/home"
 
 import './main.css'
 
-const Main = ({activePage}) => {
-
+const Main = ({activePage, toggleClose}) => {
     
+    const pages = {
+        home: <Home />,
+        beers: <Beers />,
+        contacts: <Contacts />,
+        gallery: <Gallery />
+    }
+
     return (
-        <AnimatePresence mode="wait">
-            {activePage === 'home' && (
-                <motion.div key="home">
-                    <Home />
+        <AnimatePresence mode="wait" className='main'>
+            {Object.keys(pages).map((page) => (
+                activePage === page && (
+                <motion.div key={page} onClick={toggleClose}>
+                    {pages[page]}
                 </motion.div>
-            )}
-            {activePage === 'beers' && (
-                <motion.div key="beers">
-                    <Beers />
-                </motion.div>
-            )}
-            {activePage === 'contacts' && (
-                <motion.div key="contacts">
-                    <Contacts />
-                </motion.div>
-            )}
-            {activePage === 'gallery' && (
-                <motion.div key="gallery">
-                    <Gallery />
-                </motion.div>
-            )}
+                )
+            ))}
         </AnimatePresence>
     )
 }

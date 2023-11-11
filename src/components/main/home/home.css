@@ -1,24 +1,15 @@
 .home{
-    height: 1000px;
+    height: 1200px;
     background-image: url('../../../images/barrels.jpg');
     background-size: cover;
 }
-.logo-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 1000px;
-    background: rgba(0, 0, 0, 0.716);
-}
-.img-logo-wrapper{ 
-    
+.img-logo-wrapper{
     margin: 0 auto;
     padding: 10px 8px;
     width: 300px;
     background: rgb(255, 255, 255);
     height: 180px;
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: rgba(212, 212, 217, 0.38) 0px 7px 27px 0px;
 }
 .home img{
@@ -27,25 +18,18 @@
     height: 140px;
 }
 .brewery-span-wrapper{
-    margin: 0 auto;
-    /* padding-top: 300px; */
-    margin-top: 50px;
+    margin: 80px auto;
     background: rgba(3, 3, 3, 0.579);
-    width: 70%;
+    width: 80%;
     border-radius: 15px;
     padding: 8px 0;
+    text-align: left;
     box-shadow: rgba(44, 44, 44, 0.626) 0px 7px 29px 0px;
 }
-/* @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  } */
 .brewery-span{
-    font-weight: 600;
-    font-size: 20px;
-    /* animation: typing 3s steps(40) infinite; */
+    /* font-weight: 600; */
+    padding: 40px 10px;
+    line-height: 50px;
+    font-size: 22px;
+   
 }

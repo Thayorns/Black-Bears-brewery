@@ -2,13 +2,14 @@ body{
   background: #000000;
   --RegentGray: #8f9ca4;
 }
+*{
+  font-family: 'Ubuntu', sans-serif;}
 .App {
   max-width: 1440px;
   width: 100%;
   height: 1000px;
   margin: 0 auto;
-  /* background: #8f9ca4; */
-  background: white;
+  background: var(--background);
   text-align: center;
   color: white;
 }

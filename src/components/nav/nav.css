@@ -6,28 +6,128 @@
     padding: 10px 0;
     max-width: 1440px;
     width: 100%;
-    height: 90px;
+    height: 60px;
     border-bottom: 1px solid var(--RegentGray);
     z-index: 99;
     background: white;
   }
   .ant-avatar{
-    border: 3px solid var(--RegentGray);
-    
-  }
-  .ant-avatar.ant-avatar-icon{
     background: transparent;
-    float: right;
+    border: 3px solid var(--RegentGray);
   }
+  .burger-button{
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+  }
+  .burger-line{
+    display: inline-block;
+    width: 35px;
+    height: 3px;
+    background: black;
+  }
+  .burger-content{
+    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 280px;
+    background-color: white;
+  }
+  .menu-item{
+    margin: 0 auto;
+    width: 30%;
+    margin-top: 10px;
+    font-size: 26px;
+    font-weight: 600;
+    color: black;
+  }
+  .ant-breadcrumb{
+    padding: 10px;
+    font-size: 26px;
+    width: 75%;
+  }
+  .ant-breadcrumb ol{
+    line-height: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .ant-breadcrumb li,
+  .ant-breadcrumb li:last-child,
+  .menu-item{
+    color: var(--RegentGray);
+    padding: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  .ant-breadcrumb li:hover,
+  .ant-breadcrumb li:focus,
+  .menu-item:hover,
+  .menu-item:focus{
+    background: #8f9ca443;
+    color: rgb(0, 0, 0);
+  }
+  .ant-breadcrumb li:active,
+  .menu-item:active{
+    color: rgba(0, 0, 0, 0.164);
+    scale: 0.9;
+  }
+  
+  .ant-breadcrumb .ant-breadcrumb-separator{
+    color: var(--RegentGray);
+    font-weight: 600;
+    cursor: default;
+    margin: 0;
+  }
+  .ant-breadcrumb .ant-breadcrumb-separator:hover{
+    background: none;
+    color: var(--RegentGray);
+  }
+  .ant-breadcrumb .anticon,
+  .anticon svg{
+    width: 30px;
+    height: 30px;
+  }
+  .title {
+    color: var(--RegentGray); /* значение по умолчанию для текста */
+  }
+  
+  .title.active {
+    color: black;/* цвет текста для активной страницы */
+    border-bottom: var(--RegentGray) 3px solid;
+  }
+  
   .progress-bar {
     position: fixed;
-    margin-top: 110px;
     max-width: 1440px;
     width: 100%;
-    /* top: 0; */
     left: auto;
     right: auto;
     height: 7px;
     background: var(--RegentGray);
     transform-origin: 0%;
+  }
+
+  /* MEDIA QUERIES */
+
+  @media screen and (max-width: 704px) {
+    .ant-breadcrumb{
+      display: none;
+    }
+    .burger-button{
+      visibility: visible;
+    }
+  }
+  @media screen and (min-width: 704px){
+    .ant-breadcrumb{
+      visibility: visible;
+    }
+    .burger-button,
+    .burger-content{
+      display: none;
+    }
   }
