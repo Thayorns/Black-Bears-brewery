@@ -1,9 +1,14 @@
-import { motion } from 'framer-motion';
+import { motion, useDragControls } from 'framer-motion';
 
 
 import './home.css'
 
 const Home = () => {
+    const controls = useDragControls()
+
+    function startDrag(event) {
+        controls.start(event)
+      }
 
     return (
         <motion.div className="home"
@@ -12,18 +17,40 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.6 }}
-        >
+        >  
+            <motion.div className='home-brewery-section'>
+                <motion.h1 initial={{x: -100, opacity: 0}}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 1.0, type: "spring" }}
+                >Welcome to the Black Bears Brewery!
+                </motion.h1>
+                <motion.p>Where every glass holds a story, every sip is an adventure, and every guest is a cherished part of our brewing family.</motion.p>
+            </motion.div> 
             
+            <motion.div className='home-reposts-section'
+                onPointerDown={startDrag}>
                 
-                <motion.div className="brewery-span-wrapper">
-                    <p className="brewery-span">Welcome to our brewery, where every glass holds a story, every sip is an adventure, and every guest is a cherished part of our brewing family.</p><br/>
-                    <p className="brewery-span">Step into our brewery and let the flavors of crafted perfection and the spirit of camaraderie surround you. Here, every pour is a celebration, and every visitor is a valued member of our brewing community.</p>
-                </motion.div>
-                <motion.div className="img-logo-wrapper">
-                    <img src={require('../../../images/bigLogo.jpg')}  alt="Black Bears brewery logo"/>
-                </motion.div>
-                
-            
+                <motion.img 
+                    drag="x" 
+                    dragControls={controls}
+                    className='draggable-cards' 
+                    src={require('../../../images/1stDragable.jpg')}>
+                </motion.img>
+                <motion.img 
+                    drag="x" 
+                    dragControls={controls}
+                    className='draggable-cards' 
+                    src={require('../../../images/1stDragable.jpg')}>
+                </motion.img>
+                <motion.img 
+                    drag="x" 
+                    dragControls={controls}
+                    className='draggable-cards' 
+                    src={require('../../../images/1stDragable.jpg')}>
+                </motion.img>
+
+            </motion.div>
+
         </motion.div>
     )
 }

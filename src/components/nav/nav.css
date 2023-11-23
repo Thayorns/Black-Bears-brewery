@@ -35,6 +35,7 @@
     width: 100%;
     height: 280px;
     background-color: white;
+    z-index: 1;
   }
   .menu-item{
     margin: 0 auto;
@@ -105,11 +106,13 @@
     position: fixed;
     max-width: 1440px;
     width: 100%;
+    top: 80px;
     left: auto;
     right: auto;
     height: 7px;
-    background: var(--RegentGray);
+    background: red;
     transform-origin: 0%;
+    z-index: 1;
   }
 
   /* MEDIA QUERIES */

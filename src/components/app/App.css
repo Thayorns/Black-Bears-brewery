@@ -3,7 +3,11 @@ body{
   --RegentGray: #8f9ca4;
 }
 *{
-  font-family: 'Ubuntu', sans-serif;}
+  font-family: 'Ubuntu', sans-serif;
+  background-position: center;
+  background-size: cover;
+  
+}
 .App {
   max-width: 1440px;
   width: 100%;
