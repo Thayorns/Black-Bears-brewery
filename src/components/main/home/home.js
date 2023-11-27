@@ -1,14 +1,32 @@
-import { motion, useDragControls } from 'framer-motion';
-import Draggable from 'react-draggable';
+import { motion } from 'framer-motion';
+import ReactFlow, { Background, Controls } from 'reactflow';
 
+import 'reactflow/dist/style.css';
 import './home.css'
 
 const Home = () => {
-    const controls = useDragControls()
-
-    function startDrag(event) {
-        controls.start(event)
-      }
+    const nodes = [
+        {
+          id: '1',
+          position: { x: 0, y: 100 },
+          data: {label: <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')} alt='draggable card' />}
+        },
+        {
+            id: '2',
+            position: { x: 100, y: 200 },
+            data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card' />}
+          },
+          {
+            id: '3',
+            position: { x: 200, y: 300 },
+            data: {label: <img className='draggable-cards' src={require('../../../images/3rdDragable.jpg')} alt='draggable card' />}
+          },
+          {
+            id: '4',
+            position: { x: 0, y: -100 },
+            data: {label: <img className='draggable-cards' src={require('../../../images/teamWork.jpg')} alt='draggable card' />}
+          },
+    ];
 
     return (
         <motion.div className="home"
@@ -27,24 +45,11 @@ const Home = () => {
                 <motion.h2>Where every glass holds a story, every sip is an adventure, and every guest is a cherished part of our brewing family.</motion.h2>
             </motion.div> 
             
-            <motion.div className='home-reposts-section'
-                onPointerDown={startDrag}>
-                
-                <Draggable>
-                    <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')} alt='draggable card' />
-                </Draggable>
-                <motion.img 
-                    drag="x y" 
-                    dragControls={controls}
-                    className='draggable-cards' 
-                    src={require('../../../images/1stDragable.jpg')}>
-                </motion.img>
-                <motion.img 
-                    drag="x y" 
-                    dragControls={controls}
-                    className='draggable-cards' 
-                    src={require('../../../images/1stDragable.jpg')}>
-                </motion.img>
+            <motion.div className='home-reposts-section'>
+                <ReactFlow nodes={nodes} zoomOnScroll={false} fitView>
+                    <Background />
+                    <Controls />
+                </ReactFlow>
 
             </motion.div>
 
