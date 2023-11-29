@@ -1,32 +1,57 @@
 import { motion } from 'framer-motion';
-import ReactFlow, { Background, Controls } from 'reactflow';
+import ReactFlow, { Background, Controls, applyNodeChanges, applyEdgeChanges, } from 'reactflow';
+import { useState, useCallback } from 'react'
 
 import 'reactflow/dist/style.css';
 import './home.css'
 
+const initialEdges = [
+    { id: '1-2', source: '1', target: '2', type: "step" },
+    { id: '1-3', source: '1', target: '3', type: 'step'},
+    { id: '1-4', source: '1', target: '4', type: "step"},
+]
+const initialNodes = [
+    {
+        id: '1',
+        type: 'input',
+        position: { x: 0, y: -100 },
+        data: {label: 
+            <img className='draggable-cards'
+            style={{width: '650px', height: '500px'}}
+            src={require('../../../images/teamWork.jpg')} alt='draggable card' 
+            />}
+    },
+    {
+        id: '2',
+        position: { x: -200, y: 500 },
+        data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card' />}
+    },
+    {
+        id: '3',
+        position: { x: 200, y: 500 },
+        data: {label: <img className='draggable-cards' src={require('../../../images/3rdDragable.jpg')} alt='draggable card' />}
+    },
+    {
+        id: '4',
+        position: { x: 600, y: 500 },
+        data: {label: <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')}  alt='draggable card' />}
+    },
+]
+
 const Home = () => {
-    const nodes = [
-        {
-          id: '1',
-          position: { x: 0, y: 100 },
-          data: {label: <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')} alt='draggable card' />}
-        },
-        {
-            id: '2',
-            position: { x: 100, y: 200 },
-            data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card' />}
-          },
-          {
-            id: '3',
-            position: { x: 200, y: 300 },
-            data: {label: <img className='draggable-cards' src={require('../../../images/3rdDragable.jpg')} alt='draggable card' />}
-          },
-          {
-            id: '4',
-            position: { x: 0, y: -100 },
-            data: {label: <img className='draggable-cards' src={require('../../../images/teamWork.jpg')} alt='draggable card' />}
-          },
-    ];
+    
+    const [nodes, setNodes] = useState(initialNodes);
+    const [edges, setEdges] = useState(initialEdges);
+    
+        const onNodesChange = useCallback(
+            (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
+            [],
+        )
+        const onEdgesChange = useCallback(
+            (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
+            [],
+        )
+        
 
     return (
         <motion.div className="home"
@@ -46,7 +71,12 @@ const Home = () => {
             </motion.div> 
             
             <motion.div className='home-reposts-section'>
-                <ReactFlow nodes={nodes} zoomOnScroll={false} fitView>
+                <ReactFlow nodes={nodes} 
+                    // zoomOnScroll={false} 
+                    fitView
+                    edges={edges}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}>
                     <Background />
                     <Controls />
                 </ReactFlow>
