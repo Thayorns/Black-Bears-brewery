@@ -14,10 +14,10 @@ const initialNodes = [
     {
         id: '1',
         type: 'input',
-        position: { x: 0, y: -100 },
+        position: { x: 100, y: -100 },
         data: {label: 
             <img className='draggable-cards'
-            style={{width: '650px', height: '500px'}}
+            style={{width: '450px', height: '300px'}}
             src={require('../../../images/teamWork.jpg')} alt='draggable card' 
             />}
     },
