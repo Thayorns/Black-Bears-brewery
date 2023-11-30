@@ -28,7 +28,7 @@ h2,h1{
     /* z-index: 0; */
     margin: 0 auto;
     border: 2px solid var(--RegentGray);
-    width: 95%;
+    width: 85%;
     height: 800px;
     /* background: var(--RegentGray); */
 }
@@ -41,5 +41,5 @@ h2,h1{
     width: 370px;
 }
 .react-flow__node-input{
-    width: 670px;
+    width: 470px;
 }
