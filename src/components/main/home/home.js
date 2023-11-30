@@ -6,9 +6,9 @@ import 'reactflow/dist/style.css';
 import './home.css'
 
 const initialEdges = [
-    { id: '1-2', source: '1', target: '2', type: "step" },
-    { id: '1-3', source: '1', target: '3', type: 'step'},
-    { id: '1-4', source: '1', target: '4', type: "step"},
+    { id: '1-3', source: '1', target: '3', type: "step" },
+    { id: '1-4', source: '1', target: '4', type: 'step'},
+    { id: '1-5', source: '1', target: '5', type: "step"},
 ]
 const initialNodes = [
     {
@@ -23,18 +23,28 @@ const initialNodes = [
     },
     {
         id: '2',
+        type: 'input',
+        position: { x: -100, y: -220 },
+        data: {label: 
+            <img className='draggable-cards'
+            style={{width: '450px', height: '300px'}}
+            src={require('../../../images/teamWork2.jpg')} alt='draggable card' 
+            />}
+    },
+    {
+        id: '3',
         position: { x: -200, y: 200 },
         data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card'/>
         }
     },
     {
-        id: '3',
+        id: '4',
         position: { x: 200, y: 350 },
         data: {label: <img className='draggable-cards' src={require('../../../images/3rdDragable.jpg')} alt='draggable card' />}
     },
     {
-        id: '4',
-        position: { x: 600, y: -150 },
+        id: '5',
+        position: { x: 400, y: -250 },
         data: {label: <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')}  alt='draggable card' />}
     },
 ]

@@ -18,27 +18,30 @@ h2{
     /* font-size: 24px; */
     margin-bottom: 150px;
 }
-h2,h1{
+h2,h1,h3{
     padding: 20px;
     background: rgba(0, 0, 0, 0.617);
     width: 70%;
     border-radius: 15px;
 }
+h3{
+    margin: 0 auto;
+    font-size: 20px;
+}
 .home-reposts-section{
-    /* z-index: 0; */
     margin: 0 auto;
     border: 2px solid var(--RegentGray);
     width: 85%;
-    height: 800px;
-    /* background: var(--RegentGray); */
+    height: 600px;
+    border-style: dashed;
 }
 .draggable-cards{
     
-    width: 350px;
-    height: 440px;
+    width: 340px;
+    height: 300px;
 }
 .react-flow__node-default{
-    width: 370px;
+    width: 380px;
 }
 .react-flow__node-input{
     width: 470px;
