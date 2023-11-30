@@ -23,17 +23,18 @@ const initialNodes = [
     },
     {
         id: '2',
-        position: { x: -200, y: 500 },
-        data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card' />}
+        position: { x: -200, y: 200 },
+        data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card'/>
+        }
     },
     {
         id: '3',
-        position: { x: 200, y: 500 },
+        position: { x: 200, y: 350 },
         data: {label: <img className='draggable-cards' src={require('../../../images/3rdDragable.jpg')} alt='draggable card' />}
     },
     {
         id: '4',
-        position: { x: 600, y: 500 },
+        position: { x: 600, y: -150 },
         data: {label: <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')}  alt='draggable card' />}
     },
 ]
@@ -70,6 +71,7 @@ const Home = () => {
                 <motion.h2>Where every glass holds a story, every sip is an adventure, and every guest is a cherished part of our brewing family.</motion.h2>
             </motion.div> 
             
+            <h3>Here are our brewers working together at the latest craft beer festival:</h3>
             <motion.div className='home-reposts-section'>
                 <ReactFlow nodes={nodes} 
                     // zoomOnScroll={false} 
