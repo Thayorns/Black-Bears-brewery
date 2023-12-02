@@ -92,7 +92,16 @@ const Home = () => {
                     <Background />
                     <Controls />
                 </ReactFlow>
+            </motion.div>
 
+            <motion.div className='home-pub-beers'>
+                <p>
+                    We are thrilled to announce that Black Bears Brewery craft beers are now being served in local pubs and bars!
+                    Our carefully crafted brews, that hold the passion, flavor and tradition of our brewers,
+                    have found their way into the hearts and mugs of local establishments.
+                    So, rich and flavorful experiences now await you right in your neighborhood. 
+                    Stop by, order a pint of your new favorite Black Bears brew, and enjoy the familiar comfort of your local pub with our signature touch.
+                </p>
             </motion.div>
 
         </motion.div>
