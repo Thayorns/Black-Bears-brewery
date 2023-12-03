@@ -1,6 +1,6 @@
 .home{
     margin-top: 80px;
-    height: 2485px;
+    height: 2080px;
 }
 .home-brewery-section{
     display: flex;
@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: space-around;
     position: relative;
-    height: 1200px;
+    height: 800px;
     background-image: url('../../../images/bar.png');
 }
 h1,p{
