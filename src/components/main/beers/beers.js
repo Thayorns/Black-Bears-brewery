@@ -67,14 +67,16 @@ const Beers = () => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -100, opacity: 0 }}
         transition={{ duration: 0.6}}
-    >
-      {
-        beers.map(([img, title, span]) =>
-          (
-            <Card img={img} title={title} span={span} key={img} />
+    > 
+      <div className="beers-cards">
+        {
+          beers.map(([img, title, span]) =>
+            (
+              <Card img={img} title={title} span={span} key={img} />
+            )
           )
-        )
-      }
+        }
+      </div>
     </motion.div>
   )
 }
