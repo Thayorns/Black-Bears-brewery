@@ -10,7 +10,7 @@ const Nav = ({ handlePageChoose, activePage, toggleOpen, isOpen }) => {
     const { scrollYProgress } = useScroll()
     const pages = [
       { key: 'home', title: 'Brewery' },
-      { key: 'beers', title: 'Beer' },
+      { key: 'beers', title: 'Beers' },
       { key: 'contacts', title: 'Contact Us' },
       { key: 'gallery', title: 'Gallery' }
     ]

@@ -13,7 +13,7 @@
   }
   .ant-avatar{
     background: transparent;
-    border: 3px solid var(--RegentGray);
+    border: 1px solid var(--RegentGray);
   }
   .burger-button{
     padding: 5px;
@@ -25,7 +25,7 @@
   .burger-line{
     display: inline-block;
     width: 35px;
-    height: 3px;
+    height: 2px;
     background: black;
   }
   .burger-content{
@@ -81,7 +81,7 @@
   
   .ant-breadcrumb .ant-breadcrumb-separator{
     color: var(--RegentGray);
-    font-weight: 600;
+    /* font-weight: 600; */
     cursor: default;
     margin: 0;
   }
@@ -100,7 +100,7 @@
   
   .title.active {
     color: black;/* цвет текста для активной страницы */
-    border-bottom: var(--RegentGray) 3px solid;
+    border-bottom: var(--RegentGray) 1px solid;
   }
   
   .progress-bar {
