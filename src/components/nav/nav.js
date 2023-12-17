@@ -14,19 +14,20 @@ const Nav = ({ handlePageChoose, activePage, toggleOpen, isOpen }) => {
       { key: 'contacts', title: 'Contact Us' },
       { key: 'gallery', title: 'Gallery' }
     ]
-    const breadCrumb =  <Breadcrumb
-                          items={pages.map(page => ({
-                            title: (
-                              <span
-                                key={page.key}
-                                className={activePage === page.key ? 'title active' : 'title'}
-                                onClick={() => handlePageChoose(page.key)}
-                              >
-                                {page.title}
-                              </span>
-                            )
-                          }))}
-                        />
+    const breadCrumb =  
+      <Breadcrumb
+        items={pages.map(page => ({
+          title: (
+            <span
+              key={page.key}
+              className={activePage === page.key ? 'title active' : 'title'}
+              onClick={() => handlePageChoose(page.key)}
+            >
+              {page.title}
+            </span>
+          )
+        }))}
+      />
 
 
     return (

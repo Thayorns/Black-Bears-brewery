@@ -1,4 +1,41 @@
 .contacts-wrapper {
     height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     background-image: url('../../../images/formBG.png');
+}
+.minister-contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+.minister-paragraph{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+.minister-avatar{
+    width: 80px;
+    height: 120px;
+    border-radius: 15%;
+}
+.minister-contact >h2{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.minister-contact >p{
+    display: flex;
+    justify-content: space-around;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.minister-contact p button{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
