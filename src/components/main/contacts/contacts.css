@@ -1,16 +1,12 @@
 .contacts-wrapper {
     height: 1000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     background-image: url('../../../images/formBG.png');
 }
 .minister-contact{
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* justify-content: space-between; */
+    /* justify- content: space-between; */
 }
 .minister-paragraph{
     margin: 0;

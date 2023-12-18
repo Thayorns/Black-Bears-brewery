@@ -3,6 +3,10 @@ import './contacts.css'
 
 const Contacts = () => {
 
+    const contacts = [
+        {}
+    ]
+
 
     return (
         <motion.div className="contacts-wrapper"
@@ -24,7 +28,20 @@ const Contacts = () => {
                     <motion.button></motion.button>
                     <motion.button></motion.button>
                 </p>
-            </motion.div>  
+            </motion.div>
+            <motion.div className="minister-contact">
+                <h2 className="minister-paragraph">
+                    <img className="minister-avatar" src={require('../../../images/teamWork2.jpg')}alt=""/>
+                    Hey!<br/>
+                    I'm the Public Relations Minister,<br/>
+                    please contact me for any question!
+                </h2>
+                <p>
+                    <motion.button></motion.button>
+                    <motion.button></motion.button>
+                    <motion.button></motion.button>
+                </p>
+            </motion.div>
         </motion.div>
     )
 }
