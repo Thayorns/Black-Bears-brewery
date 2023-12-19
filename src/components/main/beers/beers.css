@@ -1,7 +1,7 @@
 .beers-wrapper {
   margin: 0 auto;
   max-width: 100%;
-  /* background-image: url('../../../images/wheatOnTable.jpg'); */
+  /* background-image: url('../../../images/bar2.png'); */
 }
 .beers-cards{
   margin: 100px auto;
@@ -9,6 +9,7 @@
   padding-bottom: 100px;
 }
 .card {
+  /* color: white; */
   font-size: 22px;
   width: 320px;
   height: 430px;
@@ -16,7 +17,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  background: white;
+  background: rgba(0, 0, 0, 0.843);
   border-radius: 20px;
   box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
     0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
@@ -31,9 +32,11 @@
 }
 .card > h4{
   margin: 5px auto;
+  color: white;
 }
 .card > span{
   font-size: 17px;
+color: white;
 }
 
 .card-container {
@@ -48,7 +51,8 @@
 
 .splash {
   position: absolute;
-  background: linear-gradient(rgba(27, 26, 26, 0.5), rgba(201, 198, 198, 0.2)), #fffdfd;;
+  background-image: url('../../../images/stamp.jpg');
+  /* background: linear-gradient(rgba(27, 26, 26, 0.5), rgba(201, 198, 198, 0.2)), #fffdfd;; */
   bottom: 0;
   left: 0;
   right: 0;

@@ -1,37 +1,64 @@
 .contacts-wrapper {
-    height: 1000px;
+    margin: 80px auto;
     background-image: url('../../../images/formBG.png');
 }
-.minister-contact{
+.contact-wrapper{
+    margin: 0px auto;
+    padding: 100px 0;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    /* justify- content: space-between; */
-}
-.minister-paragraph{
-    margin: 0;
-    display: flex;
     align-items: center;
-    text-align: right;
+    width: 90%;
 }
-.minister-avatar{
-    width: 80px;
-    height: 120px;
-    border-radius: 15%;
-}
-.minister-contact >h2{
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.minister-contact >p{
+.contact{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.617);
+    border-radius: 15px;
+    width: 100%;
 }
-.minister-contact p button{
+.contact-info{
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    width: 50%;
+}
+.contact-links{
+    margin-top: 20%;
+}
+.contact-avatar{
+    margin: 25px 0px;
+    width: 20%;
+    height: 90%;
+    border-radius: 15px;
+}
+.contact-wrapper button{
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+    0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+    0 0 16px hsl(0deg 0% 0% / 0.075);
+}
+.gmail-button{
+    margin: 0 10%;
+    background-image: url('../../../images/gmail.png');
+}
+.telegram-button{
+    background-image: url('../../../images/telegram.png');
+}
+.vk-button{
+    background-image: url('../../../images/vk.png');
+}
+@media screen and (max-width: 425px){
+    .contact-wrapper button{
+        width: 50px;
+        height: 50px;
+    }
+    .contact-info{
+        font-size: 21px;
+    }
 }

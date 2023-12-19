@@ -2,9 +2,90 @@ import { motion } from "framer-motion";
 import './contacts.css'
 
 const Contacts = () => {
-
+    const links = [
+        <a href="https://web.telegram.org/k/#@anxious_sketch" target='_blank' rel="noreferrer">
+            <motion.button className="telegram-button"
+                whileHover={{ scale: 1.2 }} 
+                whileTap={{ scale: 0.8 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20
+                }}
+            ></motion.button>
+        </a>
+        ,
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=realsketch@gmail.com" target='_blank' rel="noreferrer">
+            <motion.button className="gmail-button"
+                whileHover={{ scale: 1.2 }} 
+                whileTap={{ scale: 0.8 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20
+                }}
+            ></motion.button>
+        </a>,
+        <a href="https://vk.com/id17187089" target='_blank' rel="noreferrer">
+            <motion.button className="vk-button"
+                whileHover={{ scale: 1.2 }} 
+                whileTap={{ scale: 0.8 }}
+                transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20
+                }}
+            ></motion.button>
+        </a>
+    ]
     const contacts = [
-        {}
+        [
+            <div className="contact">
+                <img className="contact-avatar" 
+                    src={require('../../../images/VolodyaAvatar.jpg')}
+                    alt=""
+                />
+                <div className="contact-info">
+                    Hey!<br/>
+                    I'm the Public Relations Minister.<br/>
+                    Please contact me for any question!
+                
+                    <div className="contact-links">
+                        {links.map(link => {return link})}
+                    </div>
+                </div>
+            </div>,
+            // 1
+        ],
+        [
+            <div className="contact">
+                <img className="contact-avatar" 
+                    src={require('../../../images/mishaBull.jpeg')}
+                    alt=""
+                />
+                <div className="contact-info">
+                    Hey!<br/>
+                    And i am the head brewer and ideological inspirer.<br/>
+                    If suddenly the Public Relations Minister does not answer you -<br/>
+                    he is fired!<br/>
+                    Contact me directly.
+                    <div className="contact-links">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=forbull@gmail.com" target='_blank'rel="noreferrer">
+                            <motion.button className="gmail-button"
+                                whileHover={{ scale: 1.2 }} 
+                                whileTap={{ scale: 0.8 }}
+                                transition={{
+                                  type: "spring",
+                                  stiffness: 260,
+                                  damping: 20
+                                }}
+                            ></motion.button>
+                        </a>
+                    </div>
+                </div>
+            </div>,
+            // 2
+        ]
     ]
 
 
@@ -16,32 +97,18 @@ const Contacts = () => {
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.6 }}
         >
-            <motion.div className="minister-contact">
-                <h2 className="minister-paragraph">
-                    <img className="minister-avatar" src={require('../../../images/VolodyaAvatar.jpg')}alt=""/>
-                    Hey!<br/>
-                    I'm the Public Relations Minister,<br/>
-                    please contact me for any question!
-                </h2>
-                <p>
-                    <motion.button></motion.button>
-                    <motion.button></motion.button>
-                    <motion.button></motion.button>
-                </p>
-            </motion.div>
-            <motion.div className="minister-contact">
-                <h2 className="minister-paragraph">
-                    <img className="minister-avatar" src={require('../../../images/teamWork2.jpg')}alt=""/>
-                    Hey!<br/>
-                    I'm the Public Relations Minister,<br/>
-                    please contact me for any question!
-                </h2>
-                <p>
-                    <motion.button></motion.button>
-                    <motion.button></motion.button>
-                    <motion.button></motion.button>
-                </p>
-            </motion.div>
+            {contacts.map(contact => {
+                return (
+                    <motion.div className="contact-wrapper"
+                        // initial="offscreen"
+                        // whileInView="onscreen"
+                        // viewport={{ once: true, amount: 0.8 }}
+                        // variants={cardVariants}
+                    >
+                        {contact}
+                    </motion.div>
+                )
+            })}
         </motion.div>
     )
 }

@@ -6,6 +6,7 @@ import 'reactflow/dist/style.css';
 import './home.css'
 
 const initialEdges = [
+    { id: '1-2', source: '1', target: '2', type: "step" },
     { id: '1-3', source: '1', target: '3', type: "step" },
     { id: '1-4', source: '1', target: '4', type: 'step'},
     { id: '1-5', source: '1', target: '5', type: "step"},
@@ -28,7 +29,7 @@ const initialNodes = [
         data: {label: 
             <img className='draggable-cards'
             style={{width: '450px', height: '300px'}}
-            src={require('../../../images/teamWork2.jpg')} alt='draggable card' 
+            src={require('../../../images/teamWork3.jpeg')} alt='draggable card' 
             />}
     },
     {

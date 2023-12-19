@@ -4,17 +4,24 @@ import './beers.css'
   
   const cardVariants = {
     offscreen: {
-    y: 300
+      y: 300
     },
     onscreen: {
-    y: 50,
-    rotate: -10,
-    transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8
-    }
-    }
+      y: 50,
+      rotate: -10,
+      transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.8
+      }
+    },
+    // whileHover: { scale: 1.2 },
+    // whileTap: { scale: 0.8 },
+    // transition: {
+    //   type: "spring",
+    //   stiffness: 260,
+    //   damping: 20
+    // }
   }
   
   // const hue = (h) => `hsl(${h}, 100%, 50%)`
@@ -33,7 +40,15 @@ function Card({ img,title,span }) {
       <div className="splash" 
         // style={{ background }} 
       />
-      <motion.div className="card" variants={cardVariants}>
+      <motion.div className="card" variants={cardVariants}
+        whileHover={{ scale: 1.1 }} 
+        whileTap={{ scale: 0.8 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20
+        }}
+      >
         {title}
         {span}
         {img}

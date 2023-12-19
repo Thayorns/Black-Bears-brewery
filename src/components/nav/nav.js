@@ -6,7 +6,13 @@ import './nav.css'
 
 const Nav = ({ handlePageChoose, activePage, toggleOpen, isOpen }) => {
    
-    const avatar = <img src={require('../../images/smallLogo.png')}  alt="Black Bears brewery logo"/>
+    const avatar = <motion.img whileHover={{ scale: 1.2 }} 
+      whileTap={{ scale: 0.8 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+      }} src={require('../../images/smallLogo.png')}  alt="Black Bears brewery logo"/>
     const { scrollYProgress } = useScroll()
     const pages = [
       { key: 'home', title: 'Brewery' },
@@ -15,7 +21,7 @@ const Nav = ({ handlePageChoose, activePage, toggleOpen, isOpen }) => {
       { key: 'gallery', title: 'Gallery' }
     ]
     const breadCrumb =  
-      <Breadcrumb
+      <Breadcrumb 
         items={pages.map(page => ({
           title: (
             <span
