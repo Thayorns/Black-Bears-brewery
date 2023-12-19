@@ -61,4 +61,18 @@
     .contact-info{
         font-size: 21px;
     }
+    .contact-avatar{
+        width: 30%;
+        height: 90%;
+    }
+}
+@media screen and (max-width: 375px){
+    .contact-avatar{
+        width: 40%;
+        height: 90%;
+    }
+    .contact-wrapper button{
+        width: 30px;
+        height: 30px;
+    }
 }
