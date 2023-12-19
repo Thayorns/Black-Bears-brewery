@@ -46,6 +46,7 @@ h3{
 }
 .react-flow__node-default{
     width: 380px;
+    /* rotate: 8deg; */
 }
 .react-flow__node-input{
     width: 470px;
@@ -66,4 +67,9 @@ h3{
     width: 60%;
     float: left;
     font-size: 18px;
+}
+@media screen and (width>702px){
+    .home-pub-beers p{
+        font-size: 22px;
+    }
 }

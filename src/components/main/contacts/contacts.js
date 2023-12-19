@@ -100,10 +100,12 @@ const Contacts = () => {
             {contacts.map(contact => {
                 return (
                     <motion.div className="contact-wrapper"
-                        // initial="offscreen"
-                        // whileInView="onscreen"
-                        // viewport={{ once: true, amount: 0.8 }}
-                        // variants={cardVariants}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 260,
+                            damping: 20
+                        }}
                     >
                         {contact}
                     </motion.div>
