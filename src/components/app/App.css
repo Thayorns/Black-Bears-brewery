@@ -1,13 +1,14 @@
 body{
   background: #ffffff;
-  --RegentGray: #8f9ca4;
+  
 }
 *{
   color: black;
   font-family: 'Ubuntu', sans-serif;
   background-position: center;
   background-size: cover;
-  
+  --RegentGray: #8f9ca4;
+  --borderRadius: 15px
 }
 .App {
   max-width: 1440px;

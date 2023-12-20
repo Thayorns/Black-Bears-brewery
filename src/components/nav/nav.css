@@ -107,16 +107,14 @@
   }
   
   .progress-bar {
-    position: fixed;
     max-width: 1440px;
     width: 100%;
     top: 80px;
-    left: auto;
-    right: auto;
-    height: 7px;
-    background: red;
-    transform-origin: 0%;
     z-index: 1;
+    position: fixed;
+    height: 5px;
+    background: red;
+    bottom: 100px;
   }
 
   /* MEDIA QUERIES */

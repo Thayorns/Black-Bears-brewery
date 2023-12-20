@@ -1,34 +1,35 @@
 import { useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import './gallery.css'
 
-function useParallax( value, distance ) {
-    return useTransform(value, [0, 1], [-distance, distance]);
+function useParallax(value, distance) {
+  return useTransform(value, [0, 1], [-distance, distance])
 }
 
-function Image( id ) {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref });
-    const y = useParallax(scrollYProgress, 300);
+function Image({ id }) {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref })
+  const y = useParallax(scrollYProgress, 300)
 
-    return (
-        <section>
-            <div ref={ref}>
-                <img src={`/${id}.jpg`} alt="" />
-            </div>
-            <motion.h2 style={{ y }}>{`№${id}`}</motion.h2>
-        </section>
-    )
+  return (
+    <section>
+      <div ref={ref}>
+        <img src={require(`./gallery-images/${id}.jpg`)}
+            alt="brewery life" />
+      </div>
+      <motion.h2 style={{ y }}>{`#${id}`}</motion.h2>
+    </section>
+  )
 }
+
 const Gallery = () => {
-
+    // const { scrollYProgress } = useScroll()
+    // const scaleX = useSpring(scrollYProgress, {
+    //     stiffness: 100,
+    //     damping: 30,
+    //     restDelta: 0.001
+    // })
 
     return (
         <motion.div className="gallery-wrapper"
@@ -38,7 +39,9 @@ const Gallery = () => {
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.6 }}
         >
-             {/* Код для компонента */}
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((image) => (
+                <Image id={image} />
+            ))}
         </motion.div>
     )
 }

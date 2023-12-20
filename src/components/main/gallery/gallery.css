@@ -1,4 +1,56 @@
 .gallery-wrapper{
     height: 2000px;
-    
+    scroll-snap-type: y mandatory;
+}
+html {
+    scroll-snap-type: y mandatory;
+  }
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    scroll-snap-align: center;
+    perspective: 500px;
+}
+  
+section > div {
+    width: 500px;
+    height:560px;
+    position: relative;
+    max-height: 90vh;
+    margin: 20px;
+    overflow: hidden;
+}
+  
+.gallery-wrapper img {
+    position: absolute;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: max-content;
+    height: 100%;
+}
+.gallery-wrapper h2 {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    left: calc(50% + 50px);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    line-height: 1.2;
+    position: absolute;
+}
+.progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--accent);
+    bottom: 100px;
 }

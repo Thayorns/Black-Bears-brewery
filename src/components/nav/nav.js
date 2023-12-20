@@ -1,4 +1,4 @@
-import { motion ,useScroll, AnimatePresence } from "framer-motion"
+import { motion ,useScroll, AnimatePresence, useSpring } from "framer-motion"
 // import { HomeOutlined } from '@ant-design/icons'
 import { Avatar,Breadcrumb } from 'antd'
 // import { useEffect, useState } from "react"
@@ -11,7 +11,7 @@ const Nav = ({ handlePageChoose, activePage, toggleOpen, isOpen }) => {
       transition={{
         type: "spring",
         stiffness: 260,
-        damping: 20
+        damping: 20,
       }} src={require('../../images/smallLogo.png')}  alt="Black Bears brewery logo"/>
     const { scrollYProgress } = useScroll()
     const pages = [
@@ -34,7 +34,11 @@ const Nav = ({ handlePageChoose, activePage, toggleOpen, isOpen }) => {
           )
         }))}
       />
-
+      const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+      });
 
     return (
       <motion.div>
@@ -66,7 +70,7 @@ const Nav = ({ handlePageChoose, activePage, toggleOpen, isOpen }) => {
         
         <motion.div
             className="progress-bar"
-            style={{ scaleX: scrollYProgress }}
+            style={{ scaleX }}
         />
         <AnimatePresence mode="wait">
           {isOpen && (
