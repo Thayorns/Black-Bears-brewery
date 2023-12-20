@@ -1,6 +1,10 @@
 .gallery-wrapper{
-    height: 2000px;
     scroll-snap-type: y mandatory;
+    /* background: linear-gradient(217deg, rgb(102,0,255,.8), rgba(255,0,0,0) 70.71%),
+        linear-gradient(127deg, rgba(19,0,255,.8), rgba(0,255,0,0) 70.71%),
+        linear-gradient(336deg, rgba(0,153,255,.8), rgba(0,0,255,0) 70.71%),
+        linear-gradient(336deg, rgba(0,204,255,.8), rgba(0,0,255,0) 70.71%); */
+       background: linear-gradient(65deg,rgb(2, 4, 34), rgb(1, 5, 58), rgb(6, 47, 122), rgb(12, 134, 53), rgb(4, 68, 38), rgb(1, 5, 58));
 }
 html {
     scroll-snap-type: y mandatory;
@@ -14,17 +18,22 @@ section {
     scroll-snap-align: center;
     perspective: 500px;
 }
-  
+
 section > div {
+    border-radius: 15px;
     width: 500px;
     height:560px;
     position: relative;
     max-height: 90vh;
     margin: 20px;
     overflow: hidden;
+    
 }
   
 .gallery-wrapper img {
+    box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+    0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+    0 0 16px hsl(0deg 0% 0% / 0.075);
     position: absolute;
     border-radius: 15px;
     top: 0;

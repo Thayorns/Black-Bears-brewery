@@ -14,10 +14,18 @@ function Image({ id }) {
 
   return (
     <section>
-      <div ref={ref}>
+        <motion.div ref={ref}
+            whileHover={{ scale: 1.2 }} 
+            whileTap={{ scale: 0.9 }}
+            transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20
+            }}
+        >
         <img src={require(`./gallery-images/${id}.jpg`)}
             alt="brewery life" />
-      </div>
+      </motion.div>
       <motion.h2 style={{ y }}>{`#${id}`}</motion.h2>
     </section>
   )
