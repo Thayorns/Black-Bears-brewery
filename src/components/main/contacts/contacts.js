@@ -15,8 +15,8 @@ const Contacts = () => {
             ></motion.button>
         </a>
         ,
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=realsketch@gmail.com" target='_blank' rel="noreferrer">
-            <motion.button className="gmail-button"
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=realsketch@gmail.com" title="realsketch@gmail.com" target='_blank' rel="noreferrer">
+            <motion.button className="gmail-button"          
                 whileHover={{ scale: 1.2 }} 
                 whileTap={{ scale: 0.8 }}
                 transition={{
@@ -70,7 +70,7 @@ const Contacts = () => {
                     he is fired!<br/>
                     Contact me directly.
                     <div className="contact-links">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=forbull@gmail.com" target='_blank'rel="noreferrer">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=forbull@gmail.com" title="forbull@gmail.com" target='_blank'rel="noreferrer">
                             <motion.button className="gmail-button"
                                 whileHover={{ scale: 1.2 }} 
                                 whileTap={{ scale: 0.8 }}
