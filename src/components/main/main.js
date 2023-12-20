@@ -1,5 +1,5 @@
 import { motion , AnimatePresence } from "framer-motion"
-
+import { useEffect } from "react"
 
 import Gallery from './gallery/gallery'
 import Contacts from './contacts/contacts'
@@ -18,6 +18,9 @@ const Main = ({activePage, toggleClose}) => {
         contacts: <Contacts />,
         gallery: <Gallery />
     }
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [activePage]);
 
     return (
         <AnimatePresence mode="wait" className='main'>
