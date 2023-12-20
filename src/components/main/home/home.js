@@ -74,10 +74,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
         >  
             <motion.div className='home-brewery-section'>
-                <motion.h1 
-                    // initial={{x: -300, opacity: 0}}
-                    // animate={{ x: 0, opacity: 1 }}
-                    // transition={{ delay: 1.4, type: "spring" }}
+                <motion.h1
                 >Welcome to the Black Bears Brewery!
                 </motion.h1>
                 <motion.h2>Where every glass holds a story, every sip is an adventure, and every guest is a cherished part of our brewing family.</motion.h2>
