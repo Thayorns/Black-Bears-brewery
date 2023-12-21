@@ -1,11 +1,10 @@
 .contacts-wrapper {
-    margin: 80px auto;
+    margin: 80px auto 0px;
     background-image: url('../../../images/formBG.png');
-    
 }
 .contact-wrapper{
     margin: 0px auto;
-    padding: 100px 0;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,17 +54,9 @@
     background-image: url('../../../images/vk.png');
 }
 @media screen and (max-width: 425px){
-    /* .contact-wrapper button{
-        width: 50px;
-        height: 50px;
-    } */
     .contact-info{
         font-size: 21px;
     }
-    /* .contact-avatar{
-        width: 30%;
-        height: 90%;
-    } */
 }
 @media screen and (max-width: 768px){
     .contact-avatar{

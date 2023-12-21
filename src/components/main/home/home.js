@@ -51,18 +51,25 @@ const initialNodes = [
 ]
 
 const Home = () => {
+    const styles = {
+        whileTap: {scale: 0.8},
+        transition: {
+            type: "spring",
+            stiffness: 260,
+            damping: 20 
+        }
+    }
+    // const [nodes, setNodes] = useState(initialNodes);
+    // const [edges, setEdges] = useState(initialEdges);
     
-    const [nodes, setNodes] = useState(initialNodes);
-    const [edges, setEdges] = useState(initialEdges);
-    
-        const onNodesChange = useCallback(
-            (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-            [],
-        )
-        const onEdgesChange = useCallback(
-            (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
-            [],
-        )
+    //     const onNodesChange = useCallback(
+    //         (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
+    //         [],
+    //     )
+    //     const onEdgesChange = useCallback(
+    //         (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
+    //         [],
+    //     )
         
 
     return (
@@ -74,15 +81,23 @@ const Home = () => {
             transition={{ duration: 0.6 }}
         >  
             <motion.div className='home-brewery-section'>
-                <motion.h1
+                <motion.h1   
+                    whileTap={styles.whileTap}
+                    transition={styles.transition}
                 >Welcome to the Black Bears Brewery!
                 </motion.h1>
-                <motion.h2>Where every glass holds a story, every sip is an adventure, and every guest is a cherished part of our brewing family.</motion.h2>
+                <motion.h2   
+                    whileTap={styles.whileTap}
+                    transition={styles.transition}
+                >
+                    Where every glass holds a story, every sip is an adventure, and every guest is a cherished part of our brewing family.</motion.h2>
             </motion.div> 
             
-            <h3>Here are our brewers working together at the latest craft beer festival:</h3>
-            <motion.div className='home-reposts-section'>
-                <ReactFlow nodes={nodes} 
+            <h3>Here are our brewers working together at the latest craft beer festival:
+            </h3>
+            {/* <motion.div className='home-reposts-section'>
+                <ReactFlow 
+                    nodes={nodes} 
                     // zoomOnScroll={false} 
                     fitView
                     edges={edges}
@@ -91,16 +106,17 @@ const Home = () => {
                     <Background />
                     <Controls />
                 </ReactFlow>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div className='home-pub-beers'>
-                <p>
+                <motion.p whileTap={styles.whileTap}
+                    transition={styles.transition}>
                     We are thrilled to announce that Black Bears Brewery craft beers are now being served in local pubs and bars!
                     Our carefully crafted brews, that hold the passion, flavor and tradition of our brewers,
                     have found their way into the hearts and mugs of local establishments.
                     So, rich and flavorful experiences now await you right in your neighborhood. 
                     Stop by, order a pint of your new favorite Black Bears brew, and enjoy the familiar comfort of your local pub with our signature touch.
-                </p>
+                </motion.p>
             </motion.div>
 
         </motion.div>
