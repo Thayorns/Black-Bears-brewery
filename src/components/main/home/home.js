@@ -1,54 +1,54 @@
 import { motion } from 'framer-motion';
-import ReactFlow, { Background, Controls, applyNodeChanges, applyEdgeChanges, } from 'reactflow';
-import { useState, useCallback } from 'react'
+// import ReactFlow, { Background, Controls, applyNodeChanges, applyEdgeChanges, } from 'reactflow';
+// import { useState, useCallback } from 'react'
 
 import 'reactflow/dist/style.css';
 import './home.css'
 
-const initialEdges = [
-    { id: '1-2', source: '1', target: '2', type: "step" },
-    { id: '1-3', source: '1', target: '3', type: "step" },
-    { id: '1-4', source: '1', target: '4', type: 'step'},
-    { id: '1-5', source: '1', target: '5', type: "step"},
-]
-const initialNodes = [
-    {
-        id: '1',
-        type: 'input',
-        position: { x: 100, y: -100 },
-        data: {label: 
-            <img className='draggable-cards'
-            style={{width: '450px', height: '300px'}}
-            src={require('../../../images/teamWork.jpg')} alt='draggable card' 
-            />}
-    },
-    {
-        id: '2',
-        type: 'input',
-        position: { x: -100, y: -220 },
-        data: {label: 
-            <img className='draggable-cards'
-            style={{width: '450px', height: '300px'}}
-            src={require('../../../images/teamWork3.jpeg')} alt='draggable card' 
-            />}
-    },
-    {
-        id: '3',
-        position: { x: -200, y: 200 },
-        data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card'/>
-        }
-    },
-    {
-        id: '4',
-        position: { x: 200, y: 350 },
-        data: {label: <img className='draggable-cards' src={require('../../../images/3rdDragable.jpg')} alt='draggable card' />}
-    },
-    {
-        id: '5',
-        position: { x: 400, y: -250 },
-        data: {label: <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')}  alt='draggable card' />}
-    },
-]
+// const initialEdges = [
+//     { id: '1-2', source: '1', target: '2', type: "step" },
+//     { id: '1-3', source: '1', target: '3', type: "step" },
+//     { id: '1-4', source: '1', target: '4', type: 'step'},
+//     { id: '1-5', source: '1', target: '5', type: "step"},
+// ]
+// const initialNodes = [
+//     {
+//         id: '1',
+//         type: 'input',
+//         position: { x: 100, y: -100 },
+//         data: {label: 
+//             <img className='draggable-cards'
+//             style={{width: '450px', height: '300px'}}
+//             src={require('../../../images/teamWork.jpg')} alt='draggable card' 
+//             />}
+//     },
+//     {
+//         id: '2',
+//         type: 'input',
+//         position: { x: -100, y: -220 },
+//         data: {label: 
+//             <img className='draggable-cards'
+//             style={{width: '450px', height: '300px'}}
+//             src={require('../../../images/teamWork3.jpeg')} alt='draggable card' 
+//             />}
+//     },
+//     {
+//         id: '3',
+//         position: { x: -200, y: 200 },
+//         data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card'/>
+//         }
+//     },
+//     {
+//         id: '4',
+//         position: { x: 200, y: 350 },
+//         data: {label: <img className='draggable-cards' src={require('../../../images/3rdDragable.jpg')} alt='draggable card' />}
+//     },
+//     {
+//         id: '5',
+//         position: { x: 400, y: -250 },
+//         data: {label: <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')}  alt='draggable card' />}
+//     },
+// ]
 
 const Home = () => {
     const styles = {
@@ -93,7 +93,9 @@ const Home = () => {
                     Where every glass holds a story, every sip is an adventure, and every guest is a cherished part of our brewing family.</motion.h2>
             </motion.div> 
             
-            <h3>Here are our brewers working together at the latest craft beer festival:
+            <h3>Here are our brewers working together at the latest craft beer festival:<br/>
+
+                <strong>(REFACTORING...)</strong>
             </h3>
             {/* <motion.div className='home-reposts-section'>
                 <ReactFlow 

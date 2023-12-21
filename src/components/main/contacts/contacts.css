@@ -1,14 +1,14 @@
 .contacts-wrapper {
-    margin: 80px auto 0px;
+    margin: 80px auto 0;
     background-image: url('../../../images/formBG.png');
 }
 .contact-wrapper{
-    margin: 0px auto;
-    padding: 10px;
+    margin: 0 auto;
+    padding: 55px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 90%;
 }
 .contact{
     display: flex;
@@ -22,21 +22,22 @@
 .contact-info{
     color: white;
     font-size: 24px;
-    padding: 10px;
+    padding: 15px;
     width: 50%;
 }
 .contact-links{
     margin-top: 20%;
 }
 .contact-avatar{
-    margin: 25px 0px;
+    margin: 15px 0px;
     width: 20%;
-    height: 90%;
+    height: 80%;
     border-radius: 15px;
 }
 .contact-wrapper button{
     width: 80px;
     height: 80px;
+    border: none;
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),

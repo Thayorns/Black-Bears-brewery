@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
+// import { Avatar } from 'antd'
+
 import './contacts.css'
 
 const Contacts = () => {
-    const links = [
+   
+    const styles = {
+        whileTap: {scale: 0.8},
+        transition: {
+            type: "spring",
+            stiffness: 260,
+            damping: 20 
+        }
+    }
+    
+      const links = [
         <a href="https://web.telegram.org/k/#@anxious_sketch" target='_blank' rel="noreferrer">
             <motion.button className="telegram-button"
                 whileHover={{ scale: 1.2 }} 
@@ -73,12 +85,8 @@ const Contacts = () => {
                         <a href="mailto:forbull@gmail.com?subject=Big%20News&body=Hi,%0D%0A%0D%0A" title="forbull@gmail.com" target='_blank'rel="noreferrer">
                             <motion.button className="gmail-button" 
                                 whileHover={{ scale: 1.2 }} 
-                                whileTap={{ scale: 0.8 }}
-                                transition={{
-                                  type: "spring",
-                                  stiffness: 260,
-                                  damping: 20
-                                }}
+                                whileTap={styles.whileTap}
+                                transition={styles.transition}
                             ></motion.button>
                         </a>
                     </div>

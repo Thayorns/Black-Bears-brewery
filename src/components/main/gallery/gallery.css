@@ -1,6 +1,9 @@
 .gallery-wrapper{
     scroll-snap-type: y mandatory;
-    background: linear-gradient(65deg,rgb(2, 4, 34), rgb(1, 5, 58), rgb(6, 47, 122), rgb(12, 134, 53), rgb(4, 68, 38), rgb(1, 5, 58));
+    background: linear-gradient(90deg, rgba(18, 18, 19), rgba(255,0,0,0) 70.71%),
+        linear-gradient(257deg, rgba(102, 102, 107), rgba(0,255,0,0) 70.71%),
+        linear-gradient(100deg, rgba(207, 211, 214), rgba(0,0,255,0) 70.71%);
+    /* background: linear-gradient(90deg,rgb(18, 18, 19),rgb(102, 102, 107),rgb(207, 211, 214)); */
 }
 html {
     scroll-snap-type: y mandatory;
@@ -31,7 +34,7 @@ section > div {
     box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
     0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
     0 0 16px hsl(0deg 0% 0% / 0.075);
-    position: absolute;
+    position: center;
     border-radius: 15px;
     top: 0;
     left: 0;

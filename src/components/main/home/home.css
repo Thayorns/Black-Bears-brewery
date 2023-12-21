@@ -9,7 +9,7 @@
     justify-content: space-around;
     position: relative;
     height: 800px;
-    background-image: url('../../../images/bar2.png');
+    background-image: url('../../../images/bar.png');
 }
 h1,p{
     margin: 0 auto;
@@ -51,7 +51,7 @@ h3{
     width: 470px;
 }
 .home-pub-beers{
-    margin: 30px auto 0px;
+    margin: 0 auto;
     width: 100%;
     height: 540px;
     display: flex;
