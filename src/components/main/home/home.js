@@ -1,56 +1,47 @@
-import { motion } from 'framer-motion';
-// import ReactFlow, { Background, Controls, applyNodeChanges, applyEdgeChanges, } from 'reactflow';
-// import { useState, useCallback } from 'react'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { wrap } from "popmotion";
 
-import 'reactflow/dist/style.css';
 import './home.css'
 
-// const initialEdges = [
-//     { id: '1-2', source: '1', target: '2', type: "step" },
-//     { id: '1-3', source: '1', target: '3', type: "step" },
-//     { id: '1-4', source: '1', target: '4', type: 'step'},
-//     { id: '1-5', source: '1', target: '5', type: "step"},
-// ]
-// const initialNodes = [
-//     {
-//         id: '1',
-//         type: 'input',
-//         position: { x: 100, y: -100 },
-//         data: {label: 
-//             <img className='draggable-cards'
-//             style={{width: '450px', height: '300px'}}
-//             src={require('../../../images/teamWork.jpg')} alt='draggable card' 
-//             />}
-//     },
-//     {
-//         id: '2',
-//         type: 'input',
-//         position: { x: -100, y: -220 },
-//         data: {label: 
-//             <img className='draggable-cards'
-//             style={{width: '450px', height: '300px'}}
-//             src={require('../../../images/teamWork3.jpeg')} alt='draggable card' 
-//             />}
-//     },
-//     {
-//         id: '3',
-//         position: { x: -200, y: 200 },
-//         data: {label: <img className='draggable-cards' src={require('../../../images/2ndDragable.jpg')} alt='draggable card'/>
-//         }
-//     },
-//     {
-//         id: '4',
-//         position: { x: 200, y: 350 },
-//         data: {label: <img className='draggable-cards' src={require('../../../images/3rdDragable.jpg')} alt='draggable card' />}
-//     },
-//     {
-//         id: '5',
-//         position: { x: 400, y: -250 },
-//         data: {label: <img className='draggable-cards' src={require('../../../images/1stDragable.jpg')}  alt='draggable card' />}
-//     },
-// ]
-
+const variants = {
+    enter: (direction) => {
+      return {
+        x: direction > 0 ? 1000 : -1000,
+        opacity: 0
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? 1000 : -1000,
+        opacity: 0
+      }
+    }
+}
+const images = [
+    require('../../../images/teamWork.jpg'),
+    require('../../../images/teamWork2.jpeg'),
+]
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset, velocity) => {
+  return Math.abs(offset) * velocity
+}
 const Home = () => {
+    
+    const [[img, direction], setImg] = useState([0, 0])
+    
+    const imageIndex = wrap(0, images.length, img);
+    
+    const paginate = (newDirection) => {
+        setImg([img + newDirection, newDirection])
+    }
+    
     const styles = {
         whileTap: {scale: 0.8},
         transition: {
@@ -59,17 +50,6 @@ const Home = () => {
             damping: 20 
         }
     }
-    // const [nodes, setNodes] = useState(initialNodes);
-    // const [edges, setEdges] = useState(initialEdges);
-    
-    //     const onNodesChange = useCallback(
-    //         (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-    //         [],
-    //     )
-    //     const onEdgesChange = useCallback(
-    //         (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
-    //         [],
-    //     )
         
 
     return (
@@ -94,21 +74,42 @@ const Home = () => {
             </motion.div> 
             
             <h3>Here are our brewers working together at the latest craft beer festival:<br/>
+            <motion.div className="carousel-container">
+                <AnimatePresence initial={false} custom={direction}>
+                    <motion.img className="carousel-img"
+                        key={img}
+                        src={images[imageIndex]}
+                        custom={direction}
+                        variants={variants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{
+                            x: { type: "spring", stiffness: 300, damping: 30 },
+                            opacity: { duration: 0.2 }
+                        }}
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={1}
+                        onDragEnd={(e, { offset, velocity }) => {
+                            const swipe = swipePower(offset.x, velocity.x);
 
-                <strong>(REFACTORING...)</strong>
+                            if (swipe < -swipeConfidenceThreshold) {
+                            paginate(1);
+                            } else if (swipe > swipeConfidenceThreshold) {
+                            paginate(-1);
+                            }
+                        }}
+                    />
+                </AnimatePresence>
+                <div className="next" onClick={() => paginate(1)}>
+                    {"‣"}
+                </div>
+                <div className="prev" onClick={() => paginate(-1)}>
+                    {"‣"}
+                </div>
+            </motion.div>
             </h3>
-            {/* <motion.div className='home-reposts-section'>
-                <ReactFlow 
-                    nodes={nodes} 
-                    // zoomOnScroll={false} 
-                    fitView
-                    edges={edges}
-                    onNodesChange={onNodesChange}
-                    onEdgesChange={onEdgesChange}>
-                    <Background />
-                    <Controls />
-                </ReactFlow>
-            </motion.div> */}
 
             <motion.div className='home-pub-beers'>
                 <motion.p whileTap={styles.whileTap}
