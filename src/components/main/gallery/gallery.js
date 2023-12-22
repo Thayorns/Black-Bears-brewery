@@ -14,13 +14,15 @@ function Image({ id }) {
 
   return (
     <section>
-        <motion.div ref={ref}
-            // whileHover={{ scale: 1.1 }} 
+        <motion.div 
+            ref={ref}
+            // whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            transition={{
+                transition={{
                 type: "spring",
                 stiffness: 260,
-                damping: 20
+                damping: 20,
+                // restDelta: 0.001
             }}
         >
         <img src={require(`./gallery-images/${id}.jpg`)}
