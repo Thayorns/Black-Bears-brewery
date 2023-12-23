@@ -67,7 +67,6 @@ const Contacts = () => {
                     </div>
                 </div>
             </div>,
-            // 1
         ],
         [
             <div className="contact">
@@ -92,7 +91,6 @@ const Contacts = () => {
                     </div>
                 </div>
             </div>,
-            // 2
         ]
     ]
 

@@ -1,5 +1,6 @@
 .home{
     margin-top: 80px auto 0px;
+    /* position: relative; */
 }
 .home-brewery-section{
     margin-top: 80px;
@@ -70,19 +71,20 @@ h3{
 }
 .carousel-container {
     position: relative;
+    /* display: inline-block; */
     margin: 20px auto 0;
     width: 100%;
-    max-height: 500px;
     background: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 .carousel-img {
-    position: absolute;
+    
+    /* position: absolute; */
     width: 100%;
     height: auto;
-    max-height: 700px;
 }
   
 .next,
