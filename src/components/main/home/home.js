@@ -7,7 +7,7 @@ import './home.css'
 const variants = {
     enter: (direction) => {
       return {
-        x: direction > 0 ? 1000 : -1000,
+        x: direction > 0 ? 10 : -10,
         opacity: 0
       };
     },
@@ -19,7 +19,7 @@ const variants = {
     exit: (direction) => {
       return {
         zIndex: 0,
-        x: direction < 0 ? 1000 : -1000,
+        x: direction < 0 ? 10 : -10,
         opacity: 0
       }
     }
@@ -74,41 +74,42 @@ const Home = () => {
             </motion.div> 
             
             <h3>Here are our brewers working together at the latest craft beer festival:<br/>
-            <motion.div className="carousel-container">
-                <AnimatePresence initial={false} custom={direction}>
-                    <motion.img className="carousel-img"
-                        key={img}
-                        src={images[imageIndex]}
-                        custom={direction}
-                        variants={variants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        transition={{
-                            x: { type: "spring", stiffness: 300, damping: 30 },
-                            opacity: { duration: 0.2 }
-                        }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={1}
-                        onDragEnd={(e, { offset, velocity }) => {
-                            const swipe = swipePower(offset.x, velocity.x);
+                <motion.div className="carousel-container">
+                    <AnimatePresence initial={false} custom={direction}>
+                        <motion.img className="carousel-img"
+                            key={img}
+                            src={images[imageIndex]}
+                            custom={direction}
+                            variants={variants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            transition={{
+                                x: { type: "spring", stiffness: 300, damping: 30 },
+                                opacity: { duration: 0.2 }
+                            }}
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={1}
+                            onDragEnd={(e, { offset, velocity }) => {
+                                // e.preventDefault()
+                                const swipe = swipePower(offset.x, velocity.x);
 
-                            if (swipe < -swipeConfidenceThreshold) {
-                            paginate(1);
-                            } else if (swipe > swipeConfidenceThreshold) {
-                            paginate(-1);
-                            }
-                        }}
-                    />
-                </AnimatePresence>
-                <div className="next" onClick={() => paginate(1)}>
-                    {"‣"}
-                </div>
-                <div className="prev" onClick={() => paginate(-1)}>
-                    {"‣"}
-                </div>
-            </motion.div>
+                                if (swipe < -swipeConfidenceThreshold) {
+                                paginate(1);
+                                } else if (swipe > swipeConfidenceThreshold) {
+                                paginate(-1);
+                                }
+                            }}
+                        />
+                    </AnimatePresence>
+                    <div className="next" onClick={() => paginate(1)}>
+                        {"‣"}
+                    </div>
+                    <div className="prev" onClick={() => paginate(-1)}>
+                        {"‣"}
+                    </div>
+                </motion.div>
             </h3>
 
             <motion.div className='home-pub-beers'>
