@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
+import { Carousel } from 'antd';
 
 import './home.css'
 
+const contentStyle = {
+  height: 'auto',
+  color: '#fff',
+  textAlign: 'center',
+  background: '#364d79',
+}
 const variants = {
     enter: (direction) => {
       return {
@@ -74,7 +81,7 @@ const Home = () => {
             </motion.div> 
             
             <h3>Here are our brewers working together at the latest craft beer festival:<br/>
-                <motion.div className="carousel-container">
+                {/* <motion.div className="carousel-container">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.img className="carousel-img"
                             key={img}
@@ -109,7 +116,16 @@ const Home = () => {
                     <div className="prev" onClick={() => paginate(-1)}>
                         {"‣"}
                     </div>
-                </motion.div>
+                </motion.div> */}
+                <Carousel autoplay >
+                    <div className="carousel-container">
+                        <img className="carousel-img" alt=""src={require('../../../images/teamWork.jpg')} style={contentStyle}/>
+                    </div>
+                    <div className="carousel-container">
+                        <img className="carousel-img" alt=""src={require('../../../images/teamWork2.jpeg')} style={contentStyle}/>
+                    </div>
+                    
+                </Carousel>
             </h3>
 
             <motion.div className='home-pub-beers'>
