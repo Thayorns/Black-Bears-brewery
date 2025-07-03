@@ -6,6 +6,8 @@
 
 The calling card of the "Black Bears" brewery. There is no such thing as too much beer.
 
+[Black Bears Brewery](https://black-bears-brewery.netlify.app/) 
+
 ## 🛠️ Tech Stack
 
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)
@@ -16,10 +18,3 @@ The calling card of the "Black Bears" brewery. There is no such thing as too muc
 
 ### 🎨 UI Libraries
 ![Ant Design](https://img.shields.io/badge/-Ant_Design-0170FE?style=flat&logo=ant-design&logoColor=white)
-
-## 🤝 Contributing
-
-Pull requests are welcome!
-
-1. 🐛 Open an issue
-2. 💻 Or submit a PR
