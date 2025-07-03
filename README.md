@@ -18,3 +18,4 @@ The calling card of the "Black Bears" brewery. There is no such thing as too muc
 
 ### 🎨 UI Libraries
 ![Ant Design](https://img.shields.io/badge/-Ant_Design-0170FE?style=flat&logo=ant-design&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/-Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white)
